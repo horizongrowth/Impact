@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Horizon Growth | Client Success & Statistics — Proven Results</title>
+    <!-- Google Fonts: modern sans-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0A0F1F;
+            color: #FFFFFF;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #FF6A00;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 32px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            border-radius: 0px;
+        }
+        .btn:hover {
+            background: #FF5500;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 106, 0, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #FF6A00;
+        }
+        .btn-outline:hover {
+            background: #FF6A00;
+        }
+
+        /* Hero */
+        .hero-stats {
+            background: radial-gradient(ellipse at 80% 20%, #0B1D3A, #01010F);
+            border-bottom: 3px solid #FF6A00;
+            padding: 80px 0;
+        }
+
+        /* Key Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin: 60px 0 40px;
+        }
+        .metric-card {
+            background: #0B1D3A;
+            padding: 40px 24px;
+            text-align: center;
+            border: 1px solid rgba(255,106,0,0.3);
+            transition: transform 0.25s, border-color 0.2s;
+        }
+        .metric-card:hover {
+            transform: translateY(-6px);
+            border-color: #FF6A00;
+        }
+        .metric-number {
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: #FF6A00;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .metric-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .metric-sub {
+            font-size: 0.85rem;
+            color: #B0B8E0;
+            margin-top: 8px;
+        }
+
+        /* Rating & Testimonials Section */
+        .rating-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        .rating-card {
+            background: #0B1D3A;
+            padding: 32px;
+            border-left: 6px solid #FF6A00;
+        }
+        .stars {
+            color: #FFB800;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            letter-spacing: 3px;
+        }
+        .rating-text {
+            font-size: 1rem;
+            color: #E2E6F0;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .client-avatar {
+            width: 48px;
+            height: 48px;
+            background: #FF6A00;
+            border-radius: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        .client-details h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+        .client-details p {
+            font-size: 0.8rem;
+            color: #B0B8E0;
+        }
+
+        /* Case Study Snapshots */
+        .casestudy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        .casestudy-card {
+            background: #0B1D3A;
+            padding: 28px;
+            border: 1px solid rgba(106, 13, 173, 0.5);
+            transition: all 0.25s;
+        }
+        .casestudy-card:hover {
+            border-color: #FF6A00;
+            transform: translateY(-4px);
+        }
+        .casestudy-icon {
+            font-size: 2rem;
+            color: #FF6A00;
+            margin-bottom: 16px;
+        }
+        .casestudy-title {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .casestudy-metric {
+            font-weight: 800;
+            color: #FFAA66;
+            margin: 12px 0;
+            font-size: 1.1rem;
+        }
+        .casestudy-desc {
+            color: #C9CFE6;
+            font-size: 0.9rem;
+        }
+
+        /* Trust Badges */
+        .trust-section {
+            background: linear-gradient(135deg, #0B1D3A 0%, #1A0F2E 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 40px;
+        }
+        .trust-badge {
+            text-align: center;
+        }
+        .trust-badge i {
+            font-size: 2.5rem;
+            color: #FF6A00;
+        }
+        .trust-badge span {
+            display: block;
+            margin-top: 12px;
+            font-weight: 600;
+        }
+
+        /* CTA */
+        .cta-banner {
+            background: linear-gradient(95deg, #FF6A00, #B23B00);
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        footer {
+            background: #04070F;
+            padding: 50px 0 30px;
+            border-top: 1px solid #FF6A0030;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+        }
+        .footer-col h4 {
+            color: #FF6A00;
+            margin-bottom: 18px;
+        }
+        .footer-col a {
+            color: #C0C6DD;
+            text-decoration: none;
+        }
+        .footer-col a:hover { color: #FF6A00; }
+        .social-icons {
+            display: flex;
+            gap: 18px;
+            margin-top: 16px;
+        }
+        .social-icons a {
+            font-size: 1.5rem;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            color: #9AA2C2;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 24px; }
+            .section { padding: 60px 0; }
+            .metric-number { font-size: 2.8rem; }
+        }
+
+        .gradient-underline {
+            border-bottom: 4px solid #FF6A00;
+            padding-bottom: 6px;
+        }
+        .badge-pro {
+            background: #6A0DAD;
+            padding: 4px 12px;
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-stats">
+    <div class="container">
+        <div style="max-width: 800px;">
+            <span class="badge-pro"><i class="fas fa-chart-line"></i> PROVEN TRACK RECORD</span>
+            <h1 style="margin-top: 20px;">Client <span style="color: #FF6A00;">Success & Statistics</span></h1>
+            <p style="font-size: 1.3rem; margin: 24px 0; color: #D0D6F0;">Real results, verified metrics, and hundreds of brands that trust us to drive exponential growth.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="#metrics" class="btn">View Our Impact <i class="fas fa-arrow-down"></i></a>
+                <a href="https://horizongrowth.github.io/Procedure/" class="btn btn-outline" target="_blank">How We Work</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Performance Metrics -->
+<section id="metrics" class="section" style="padding-top: 40px;">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h2>By The <span class="gradient-underline">Numbers</span></h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 16px auto 0; color:#BDC5F0;">Aggregated data across 500+ successful campaigns</p>
+        </div>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-number">97%</div>
+                <div class="metric-label">Client Retention Rate</div>
+                <div class="metric-sub">Year-over-year partnership renewal</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">$180M+</div>
+                <div class="metric-label">Client Revenue Generated</div>
+                <div class="metric-sub">Attributed to our strategies</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">4.92</div>
+                <div class="metric-label">Average Client Rating</div>
+                <div class="metric-sub">Out of 5 — based on 320+ reviews</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">287%</div>
+                <div class="metric-label">Avg. ROAS Increase</div>
+                <div class="metric-sub">Within first 6 months</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Client Ratings & Testimonials -->
+<section class="section" style="background: linear-gradient(135deg, #0B1D3A 0%, #1A0F2E 100%); padding: 70px 0;">
+    <div class="container">
+        <div style="text-align: center;">
+            <h2>What Clients Say <span class="gradient-underline">About Us</span></h2>
+            <p style="font-size:1.1rem; max-width:700px; margin: 0 auto 40px;">Trusted by industry leaders and fast-growing startups alike.</p>
+        </div>
+        <div class="rating-grid">
+            <div class="rating-card">
+                <div class="stars">★★★★★</div>
+                <div class="rating-text">"Horizon Growth transformed our digital presence. Within 4 months, our organic traffic grew 240% and paid ROAS tripled. The data transparency is unmatched."</div>
+                <div class="client-info">
+                    <div class="client-avatar"><i class="fas fa-building"></i></div>
+                    <div class="client-details">
+                        <h4>Sarah Chen, CMO</h4>
+                        <p>Nextera Health — 5.0 ★</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rating-card">
+                <div class="stars">★★★★★</div>
+                <div class="rating-text">"Best agency we've ever partnered with. Their structured process and weekly sprints kept us aligned. We saw +158% revenue in Q3 alone."</div>
+                <div class="client-info">
+                    <div class="client-avatar"><i class="fas fa-store"></i></div>
+                    <div class="client-details">
+                        <h4>Marcus Rivera, Founder</h4>
+                        <p>Moda服饰 — 5.0 ★</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rating-card">
+                <div class="stars">★★★★★</div>
+                <div class="rating-text">"Incredible ROI and communication. Their team feels like an extension of our marketing department. Highly recommend for B2B SaaS."</div>
+                <div class="client-info">
+                    <div class="client-avatar"><i class="fas fa-cloud"></i></div>
+                    <div class="client-details">
+                        <h4>Elena Voss, Director</h4>
+                        <p>CloudScale AI — 4.9 ★</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Aggregated Rating Summary -->
+        <div style="text-align: center; margin-top: 50px; padding: 24px; background: #0A0F1F; border: 1px solid #FF6A0030;">
+            <div style="font-size: 2rem; font-weight: 800; color:#FF6A00;">4.92 <span style="font-size: 1rem; color:white;">/ 5</span></div>
+            <div class="stars" style="font-size: 1.3rem;">★★★★★</div>
+            <p>Based on 324 verified client reviews across Google, Clutch, and Trustpilot</p>
+        </div>
+    </div>
+</section>
+
+<!-- Case Study Snapshots (Success Stories) -->
+<section class="section">
+    <div class="container">
+        <div style="text-align: center;">
+            <h2>Success <span class="gradient-underline">Stories</span></h2>
+            <p style="font-size:1.1rem; max-width:700px; margin: 0 auto 20px;">Real results from real partnerships</p>
+        </div>
+        <div class="casestudy-grid">
+            <div class="casestudy-card">
+                <i class="fas fa-chart-line casestudy-icon"></i>
+                <h3 class="casestudy-title">FinTech Unicorn</h3>
+                <div class="casestudy-metric">+312% Conversion Rate</div>
+                <p class="casestudy-desc">Full-funnel performance marketing and CRO overhaul led to record-breaking user acquisition within 5 months.</p>
+            </div>
+            <div class="casestudy-card">
+                <i class="fas fa-globe casestudy-icon"></i>
+                <h3 class="casestudy-title">E‑commerce Fashion Brand</h3>
+                <div class="casestudy-metric">ROAS ↑ 426% YoY</div>
+                <p class="casestudy-desc">Creative strategy + TikTok & Meta ads scaled revenue from $2M to $8.5M annually.</p>
+            </div>
+            <div class="casestudy-card">
+                <i class="fas fa-microchip casestudy-icon"></i>
+                <h3 class="casestudy-title">B2B SaaS Platform</h3>
+                <div class="casestudy-metric">Demo requests +187%</div>
+                <p class="casestudy-desc">Account-based marketing, LinkedIn ads, and automated nurture sequences doubled pipeline velocity.</p>
+            </div>
+        </div>
+        <!-- Additional stat highlight -->
+        <div style="margin-top: 50px; background: #0B1D3A; padding: 32px; text-align: center; border-bottom: 4px solid #FF6A00;">
+            <i class="fas fa-trophy" style="font-size: 2rem; color:#FF6A00; margin-bottom: 16px; display: inline-block;"></i>
+            <h3 style="margin-bottom: 12px;">Recognized Among Top 1% of Agencies</h3>
+            <p>Ranked #1 in Client Satisfaction by Marketing Gazette & 2024 Performance Marketing Award Winner.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Trust & Certifications -->
+<section class="trust-section">
+    <div class="container">
+        <h2>Trusted By <span class="gradient-underline">Industry Leaders</span></h2>
+        <div class="badge-container">
+            <div class="trust-badge"><i class="fab fa-google"></i><span>Google Premier Partner</span></div>
+            <div class="trust-badge"><i class="fab fa-meta"></i><span>Meta Business Partner</span></div>
+            <div class="trust-badge"><i class="fab fa-hubspot"></i><span>HubSpot Elite</span></div>
+            <div class="trust-badge"><i class="fas fa-chart-simple"></i><span>Clutch Top 100</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-banner">
+    <div class="container">
+        <h2 style="color: #0B1D3A;">Ready to write your <span style="color: white;">success story?</span></h2>
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 20px auto; color:#1F1A2E; font-weight:600;">Join 300+ brands that achieved measurable growth with our data-first approach.</p>
+        <a href="#" class="btn" style="background:#0B1D3A; color:white;">Get Your Free Growth Audit →</a>
+        <p style="margin-top: 24px; font-size:0.85rem;">No commitment — just actionable insights.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Horizon Growth</h4>
+                <p>Performance marketing agency with a 97% client retention rate and proven ROI.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="https://horizongrowth.github.io/Procedure/" target="_blank">Our Process</a></li>
+                    <li><a href="#">Client Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press & Awards</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 440 Strand, London</li>
+                    <li><i class="fas fa-envelope"></i> results@horizongrowth.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (888) 420-0924</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Horizon Growth — Real statistics, real success. Verified client outcomes.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Smooth scroll -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === "#" || href === "") return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
